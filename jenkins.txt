@@ -1,0 +1,30 @@
+execute shell 1
+
+echo "-------------Build Started--------------"
+cat <<EOF > index.html
+<html>
+<body bgcolor=black>
+<center>
+<h2><font color=yellow>Hello from Roman Skrylnyk</font>>/h2>
+<font color=blue>www.siemens-mobiles.com</font>
+</center>
+</body>
+</html>
+EOF
+echo "-------------Build Finished-------------"
+
+execute shell 2
+
+echo "---------------------Test Started----------------------"
+result=`grep "Hello" index.html |wc -l`
+echo $result
+if  [ "$result" = "1" ]
+then
+ echo "Test Passed"
+else
+ echo "Test Failed"
+ exit 1
+fi
+echo "---------------------Test Finished----------------------"
+
+copy to server,ubuntu20,apache2,/var/www/html,chmod
