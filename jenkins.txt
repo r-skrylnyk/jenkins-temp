@@ -27,7 +27,7 @@ else
 fi
 echo "---------------------Test Finished----------------------"
 
-copy to server,ubuntu20,apache2,/var/www/html,chmod
+copy to server deploy,ubuntu20,apache2,/var/www/html (chmod)
 
 
 Later (git)
