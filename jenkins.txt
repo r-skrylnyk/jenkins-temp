@@ -28,3 +28,12 @@ fi
 echo "---------------------Test Finished----------------------"
 
 copy to server,ubuntu20,apache2,/var/www/html,chmod
+
+
+Later (git)
+echo "-------------Build Started--------------"
+ls -la
+cat index.html
+echo "Build by Jenkins rev: $BUILD_ID" >> index.html
+cat index.html
+echo "-------------Build Finished-------------"
